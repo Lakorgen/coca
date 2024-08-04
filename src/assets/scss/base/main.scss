@@ -12,10 +12,14 @@ html {
   box-sizing: inherit;
 }
 
-body {
+.body {
   overflow-x: hidden;
   color: var(--neutral-color-100);
   background-color: var(--neutral-color-10);
+
+  &--fixef{
+    overflow-y: hidden;
+  }
 }
 
 img {

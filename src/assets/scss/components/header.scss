@@ -1,4 +1,9 @@
 .header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: var(--z-index-3);
   padding: 26px 0 22px;
 
   @include mobile {
@@ -71,6 +76,7 @@
     background-color: var(--neutral-color-130);
     transform: translateY(8px);
     transition: background-color var(--transition);
+    cursor: pointer;
 
     &::before {
       content: '';
