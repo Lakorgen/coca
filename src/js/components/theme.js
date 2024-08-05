@@ -6,7 +6,7 @@ export const useTheme = () => {
   const theme = localStorage.getItem('theme') || 'light';
   themeTargetDataset.theme = theme;
 
-  if (theme === 'dark'){
+  if (theme === 'dark') {
     themeSwitcher.checked = true;
   }
 
