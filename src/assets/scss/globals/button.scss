@@ -7,11 +7,11 @@
     text-align: center;
     transition: opacity var(--transition);
 
-    @include mobile{
+    @include mobile {
       font-size: 14px;
     }
 
-    &:hover{
+    &:hover {
       opacity: 0.9;
     }
   }
