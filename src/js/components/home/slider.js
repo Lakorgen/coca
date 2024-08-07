@@ -39,3 +39,22 @@ export const usePartnersSlider = () => {
     },
   });
 };
+
+export const useTestimonialsSlider = () => {
+  new Swiper('.testimonials__slider', {
+    modules: [Navigation],
+    slidesPerView: 1,
+    loop: true,
+    spaceBetween: 16,
+    centeredSlides: true,
+    navigation: {
+      nextEl: '.testimonials__btn--next',
+      prevEl: '.testimonials__btn--prev',
+    },
+    breakpoints: {
+      993: {
+        centeredSlides: false,
+      },
+    },
+  });
+};
