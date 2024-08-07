@@ -1,7 +1,8 @@
-import Swiper from 'swiper';
+import Swiper from 'swiper/bundle';
 import { Navigation, Pagination } from 'swiper/modules';
 
 import 'swiper/css';
+import 'swiper/css/bundle';
 import 'swiper/css/pagination';
 
 export const useInsightSlider = () => {
@@ -43,18 +44,16 @@ export const usePartnersSlider = () => {
 export const useTestimonialsSlider = () => {
   new Swiper('.testimonials__slider', {
     modules: [Navigation],
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true,
+    },
     slidesPerView: 1,
     loop: true,
-    spaceBetween: 16,
-    centeredSlides: true,
+    spaceBetween: 22,
     navigation: {
       nextEl: '.testimonials__btn--next',
       prevEl: '.testimonials__btn--prev',
-    },
-    breakpoints: {
-      993: {
-        centeredSlides: false,
-      },
     },
   });
 };
