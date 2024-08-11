@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "intl-tel-input": "^23.8.1",
+    "just-validate": "^4.3.0",
     "swiper": "^11.1.9"
   }
 }

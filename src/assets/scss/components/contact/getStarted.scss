@@ -89,6 +89,7 @@
 
     &-label {
       @include flex-column;
+      position: relative;
       margin-bottom: 24px;
       width: 100%;
 
@@ -138,4 +139,10 @@
       display: none;
     }
   }
+}
+
+.just-validate-error-label{
+  position: absolute;
+    top: 100%;
+    font-size: 10px;
 }
