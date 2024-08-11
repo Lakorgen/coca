@@ -126,9 +126,7 @@
     }
 
     @include mobile {
-      gap: 40px 60px;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: none;
     }
 
     @include small-mobile {
@@ -138,17 +136,64 @@
 
   &__item {
     &-title {
+      position: relative;
       margin-bottom: 24px;
       font-weight: 700;
       line-height: 150%;
-    }
 
+      @include mobile {
+        margin-bottom: 15px;
+        min-width: 120px;
+        text-align: center;
+
+        &::marker {
+          content: '';
+        }
+
+        &::before {
+          content: '';
+          display: inline-block;
+          border-radius: 6px;
+          width: 18px;
+          height: 3px;
+          background-color: var(--neutral-color-100);
+        }
+
+        &::after {
+          transform: rotate(90deg);
+          transition: transform var(--transition);
+        }
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 100%;
+          display: inline-block;
+          border-radius: 6px;
+          width: 18px;
+          height: 3px;
+          background-color: var(--neutral-color-100);
+        }
+      }
+    }
+  }
+
+  &__sublist {
     @include mobile {
-      min-width: 143px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 15px;
     }
   }
 
   &__subitem {
+    @include mobile {
+      text-align: center;
+    }
+
     &:not(:last-child) {
       margin-bottom: 16px;
     }
@@ -276,5 +321,19 @@
     font-weight: 500;
     line-height: 143%;
     color: #fff;
+  }
+
+  &__accordion {
+    display: none;
+    max-width: 120px;
+
+    @include mobile {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  &__accordion[open] &__item-title::after {
+    transform: rotate(180deg);
   }
 }
