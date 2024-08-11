@@ -6620,7 +6620,7 @@ export const useYandexMap = () => {
             100 Smith Street<br>Collingwood VIC 3066 AU
           </p>
        </div>
-       <img loading="lazy" src="./assets/icons/map-pin-icon.svg" width="40" height="46" alt="Pin map"/>
+       <img loading="lazy" src="../assets/icons/map-pin-icon.svg" width="40" height="46" alt="Pin map"/>
       </div>`;
   });
 };
