@@ -1,0 +1,64 @@
+.hero {
+  padding: 105px 0 160px;
+
+  &__title {
+    margin-bottom: 123px;
+    max-width: 949px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    text-align: left;
+    color: var(--neutral-color-100);
+  }
+
+  &__body {
+    @include flex-all-between;
+  }
+
+  &__descr {
+    max-width: 738px;
+
+    &::before {
+      flex-shrink: 0;
+    }
+  }
+
+  &__btn {
+    @include flex-all-center;
+    position: relative;
+    width: 162px;
+    height: 162px;
+    transition: transform .2s;
+
+    rect{
+      fill: var(--neutral-color-100);
+    }
+
+    &:hover{
+      transform: scale(1.05);
+    }
+
+    &-wrapper {
+      @include flex-all-center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 162px;
+      height: 162px;
+      animation: text-circle 5s 0s linear infinite;
+
+      path{
+        fill: var(--neutral-color-100);
+      }
+
+      @keyframes text-circle {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+}
