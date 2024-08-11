@@ -1,4 +1,5 @@
 export const useYandexMap = () => {
+  const ymaps3 = window.ymaps3;
   const { YMap, YMapDefaultSchemeLayer } = ymaps3;
   ymaps3.ready.then(() => {
     const map = new ymaps3.YMap(document.getElementById('map'), {
@@ -6620,7 +6621,10 @@ export const useYandexMap = () => {
             100 Smith Street<br>Collingwood VIC 3066 AU
           </p>
        </div>
-       <img loading="lazy" src="../assets/icons/map-pin-icon.svg" width="40" height="46" alt="Pin map"/>
+       <svg width="40" height="46" viewBox="0 0 40 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.6448 42.1901C24.158 40.0102 26.4641 38.5607 28.8496 37.3985C35.4563 34.18 40 27.4702 40 19.7143C40 8.82639 31.0457 0 20 0C8.9543 0 0 8.82639 0 19.7143C0 27.4702 4.54369 34.18 11.1504 37.3985C13.5359 38.5607 15.842 40.0102 17.3552 42.1901L20 46L22.6448 42.1901Z" fill="#F5F5FF"/>
+<circle cx="20" cy="20" r="12.5" fill="#1463FF"/>
+</svg>
       </div>`;
   });
 };
