@@ -1,0 +1,57 @@
+.powerful {
+  border-top: 1px solid var(--neutral-color-40);
+  border-bottom: 1px solid var(--neutral-color-40);
+  padding: 80px 0;
+
+  @include small-tablet{
+    padding: 40px 0;
+  }
+
+  &__container {
+    @include flex-all-between;
+    gap: 30px;
+
+    @include tablet {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    @include small-tablet{
+      gap: 15px;
+    }
+  }
+
+  &__title {
+    max-width: 480px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    color: var(--neutral-color-100);
+
+    @include mini-desktop {
+      font-size: 48px;
+    }
+
+    @include small-tablet {
+      font-size: 36px;
+    }
+
+    @include mobile {
+      max-width: 360px;
+      font-size: 30px;
+    }
+  }
+
+  &__descr {
+    max-width: 522px;
+    font-weight: 600;
+    color: var(--neutral-color-100);
+
+    @include mini-desktop {
+      font-size: 20px;
+    }
+
+    @include small-tablet {
+      font-size: 16px;
+    }
+  }
+}

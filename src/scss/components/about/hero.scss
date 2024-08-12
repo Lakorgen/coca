@@ -1,6 +1,10 @@
 .hero {
   padding: 105px 0 160px;
 
+  @include tablet {
+    padding: 65px 0 80px;
+  }
+
   &__title {
     margin-bottom: 123px;
     max-width: 949px;
@@ -8,14 +12,73 @@
     letter-spacing: -0.04em;
     text-align: left;
     color: var(--neutral-color-100);
+
+    @include mini-desktop {
+      max-width: 700px;
+      font-size: 60px;
+    }
+
+    @include tablet {
+      margin-bottom: 60px;
+      max-width: 500px;
+      font-size: 50px;
+    }
+
+    @include small-tablet {
+      margin: 0 auto 40px;
+      font-size: 40px;
+      text-align: center;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+      font-size: 34px;
+    }
+
+    @include small-mobile {
+      font-size: 28px;
+    }
   }
 
   &__body {
     @include flex-all-between;
+    margin-bottom: 135px;
+
+    @include tablet {
+      margin-bottom: 60px;
+    }
+
+    @include small-tablet {
+      gap: 15px;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
   }
 
   &__descr {
     max-width: 738px;
+
+    @include mini-desktop {
+      max-width: 600px;
+      font-size: 28px;
+    }
+
+    @include tablet {
+      max-width: 400px;
+      font-size: 20px;
+    }
+
+    @include small-tablet {
+      font-size: 16px;
+    }
+
+    @include mobile {
+      font-size: 14px;
+    }
 
     &::before {
       flex-shrink: 0;
@@ -27,13 +90,25 @@
     position: relative;
     width: 162px;
     height: 162px;
-    transition: transform .2s;
+    transition: transform 0.2s;
 
-    rect{
+    @include mobile {
+      width: 71px;
+      height: 71px;
+    }
+
+    & > svg {
+      @include mobile {
+        width: 29px;
+        height: 29px;
+      }
+    }
+
+    & rect {
       fill: var(--neutral-color-100);
     }
 
-    &:hover{
+    &:hover {
       transform: scale(1.05);
     }
 
@@ -46,7 +121,12 @@
       height: 162px;
       animation: text-circle 5s 0s linear infinite;
 
-      path{
+      @include mobile {
+        width: 71px;
+        height: 71px;
+      }
+
+      & path {
         fill: var(--neutral-color-100);
       }
 
@@ -61,4 +141,76 @@
       }
     }
   }
+
+  &__slide {
+    @include mobile {
+      text-align: center;
+    }
+
+    &-title {
+      margin-bottom: 8px;
+      max-width: 300px;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+      color: var(--neutral-color-100);
+
+      @include small-tablet {
+        margin-bottom: 6px;
+        font-size: 24px;
+      }
+
+      @include mobile {
+        margin: 0 auto 6px;
+      }
+    }
+
+    &-descr {
+      margin-bottom: 32px;
+      font-weight: 500;
+      color: var(--neutral-color-150);
+
+      @include small-tablet {
+        font-size: 14px;
+      }
+    }
+
+    &-btn {
+      padding: 16px 34px;
+      color: var(--neutral-color-10);
+      background: var(--neutral-color-100);
+      transition: opacity 0.2s;
+
+      @include small-tablet {
+        padding: 12px 30px;
+        font-size: 14px;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__pagination {
+    border-radius: 15px;
+    padding: 3px;
+    background: var(--neutral-color-100);
+    opacity: 0.8;
+
+    &-wrapper {
+      position: relative;
+      margin-top: 35px;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    background: var(--neutral-color-40);
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: var(--neutral-color-10);
+  }
 }
+
