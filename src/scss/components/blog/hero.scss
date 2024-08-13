@@ -1,0 +1,260 @@
+.hero {
+  padding: 95px 0 168px;
+
+  @include mobile {
+    padding: 65px 0 88px;
+  }
+
+  &__title {
+    margin-bottom: 53px;
+    max-width: 613px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--neutral-color-100);
+
+    @include tablet {
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    @include small-tablet {
+      margin-bottom: 24px;
+      font-size: 46px;
+    }
+
+    @include mobile {
+      font-size: 36px;
+    }
+
+    @include small-mobile {
+      margin-bottom: 16px;
+      font-size: 28px;
+    }
+  }
+
+  &__descr {
+    margin-bottom: 128px;
+    max-width: 750px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: var(--neutral-color-100);
+
+    @include tablet {
+      margin: 0 auto 108px;
+      text-align: center;
+    }
+
+    @include small-tablet {
+      margin-bottom: 68px;
+      max-width: 550px;
+      font-size: 24px;
+    }
+
+    @include mobile {
+      margin-bottom: 48px;
+      font-size: 20px;
+    }
+
+    @include small-mobile {
+      font-size: 16px;
+    }
+
+    &::before {
+      flex-shrink: 0;
+    }
+  }
+
+  &__tab-controls {
+    @include flex-align-center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+
+    @include tablet {
+      justify-content: center;
+    }
+
+    @include small-tablet {
+      gap: 15px 30px;
+      margin-bottom: 40px;
+    }
+
+    @include small-mobile {
+      gap: 15px;
+    }
+
+    &-link {
+      position: relative;
+      font-weight: 500;
+      color: var(--neutral-color-150);
+      transition: color 0.2s;
+
+      @include small-mobile {
+        font-size: 14px;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: -5px;
+        left: 0;
+        height: 1px;
+        background-color: var(--neutral-color-100);
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity var(--transition),
+          visibility var(--transition);
+      }
+
+      &:hover {
+        color: var(--neutral-color-100);
+
+        &::after {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      &--active {
+        font-weight: 600;
+        color: var(--neutral-color-100);
+
+        &::after {
+          content: '';
+          position: absolute;
+          right: 0;
+          bottom: -5px;
+          left: 0;
+          height: 1px;
+          background-color: var(--neutral-color-100);
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  &__pagination {
+    border-radius: 15px;
+    padding: 3px;
+    background: var(--neutral-color-100);
+    opacity: 0.8;
+
+    &-wrapper {
+      position: relative;
+      margin-top: 35px;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    background: var(--neutral-color-40);
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: var(--neutral-color-10);
+  }
+
+  &__article {
+    &-img {
+      margin-bottom: 16px;
+      min-height: 428px;
+
+      @include small-tablet {
+        min-height: 328px;
+      }
+
+      @include mobile {
+        margin-bottom: 8px;
+        max-height: 328px;
+      }
+
+      @include small-mobile {
+        min-height: 228px;
+        max-height: 228px;
+      }
+    }
+
+    &-head {
+      @include flex-all-between;
+      margin-bottom: 24px;
+      font-weight: 400;
+      color: var(--neutral-color-150);
+
+      @include tablet {
+        gap: 10px;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      @include small-tablet {
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+
+      @include mobile {
+        gap: 6px;
+        font-size: 14px;
+      }
+
+      @include small-mobile{
+        gap: 0;
+        margin-bottom: 8px;
+        font-size: 10px;
+      }
+    }
+
+
+    &-author {
+      font-style: normal;
+    }
+
+    &-title {
+      margin-bottom: 16px;
+      max-width: 400px;
+      font-weight: 700;
+      line-height: 125%;
+      letter-spacing: -0.03em;
+      color: var(--neutral-color-100);
+
+      @include tablet {
+        margin: 0 auto 16px;
+        font-size: 24px;
+        text-align: center;
+      }
+
+      @include mobile{
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+    }
+
+    &-descr {
+      max-width: 332px;
+      font-weight: 500;
+      font-size: 20px;
+      color: var(--neutral-color-150);
+
+      @include tablet {
+        margin: 0 auto;
+        font-size: 18px;
+        text-align: center;
+      }
+
+      @include mobile{
+        max-width: 250px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__tab-content {
+    display: none;
+
+    &--show {
+      display: block;
+    }
+  }
+}
