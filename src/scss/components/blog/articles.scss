@@ -1,0 +1,162 @@
+.articles {
+  padding: 160px 0;
+
+  @include tablet{
+    padding: 100px 0;
+  }
+
+  @include mobile{
+    padding: 80px 0;
+  }
+
+  &__top {
+    @include flex-all-between;
+    gap: 15px;
+    margin-bottom: 80px;
+
+    @include small-tablet{
+      margin-bottom: 60px;
+    }
+
+    @include mobile{
+      gap: 30px;
+      flex-direction: column;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    color: var(--neutral-color-100);
+
+    @include small-tablet{
+      margin-bottom: 14px;
+    }
+
+  }
+
+  &__descr {
+    max-width: 435px;
+    font-weight: 500;
+    color: var(--neutral-color-150);
+  }
+
+  &__btns {
+    @include flex-align-center;
+    gap: 16px;
+  }
+
+  &__btn {
+    @include flex-all-center;
+    border: 1px solid var(--neutral-color-40);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transition:
+      background-color var(--transition),
+      border-color var(--transition);
+
+    @include small-mobile {
+      width: 40px;
+      height: 40px;
+    }
+
+    & svg path {
+      transition: fill var(--transition);
+    }
+
+    &:hover {
+      border-color: var(--neutral-color-100);
+      background: var(--neutral-color-100);
+
+      & svg path {
+        fill: var(--neutral-color-10);
+      }
+    }
+
+    &--next {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__slide {
+    max-width: 395px;
+
+    &-title {
+      margin-bottom: 16px;
+      font-weight: 600;
+      line-height: 131%;
+      letter-spacing: -0.03em;
+      color: var(--neutral-color-100);
+
+      @include tablet{
+        font-size: 24px;
+      }
+
+      @include mobile{
+        font-size: 18px;
+      }
+    }
+
+    &-descr {
+      margin-bottom: 24px;
+      font-weight: 500;
+      color: var(--neutral-color-150);
+
+      @include tablet{
+        font-size: 16px;
+      }
+
+      @include mobile{
+        font-size: 14px;
+      }
+    }
+
+    &-link {
+      display: inline-block;
+      border: 1px solid #ced1d8;
+      border-radius: 100px;
+      padding: 16px 45px;
+      max-width: 175px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 150%;
+      text-align: center;
+      color: var(--neutral-color-100);
+      transition: opacity var(--transition);
+
+      @include mobile{
+        padding: 12px 36px;
+        font-size: 12px;
+      }
+
+      &:hover{
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__pagination {
+    border-radius: 15px;
+    padding: 3px;
+    background: var(--neutral-color-100);
+    opacity: 0.8;
+
+    &-wrapper {
+      position: relative;
+      margin-top: 35px;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    background: var(--neutral-color-40);
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: var(--neutral-color-10);
+  }
+}
