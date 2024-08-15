@@ -11,16 +11,16 @@
   }
 
   &__fixed {
+    border-bottom: 1px solid var(--neutral-color-40);
+    background-color: var(--neutral-color-10);
+  }
+  
+  &--show {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     z-index: 11;
-    border-bottom: 1px solid var(--neutral-color-40);
-    background-color: var(--neutral-color-10);
-  }
-
-  &--show {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
