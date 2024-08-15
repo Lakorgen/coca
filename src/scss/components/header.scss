@@ -1,10 +1,18 @@
 .header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 11;
   padding: 26px 0 22px;
   background-color: transparent;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-80%);
-  transition: all .2s;
+  transition:
+    transform 0.2s,
+    opacity 0.2s,
+    visibility 0.2s;
 
   @include mobile {
     padding: 22px 0 18px;
@@ -14,13 +22,8 @@
     border-bottom: 1px solid var(--neutral-color-40);
     background-color: var(--neutral-color-10);
   }
-  
+
   &--show {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 11;
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
