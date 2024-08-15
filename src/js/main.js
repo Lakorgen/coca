@@ -3,6 +3,7 @@ import '/scss/main.scss';
 //components
 import { useTheme } from './components/theme.js';
 import { useBurger } from './components/burger.js';
+import { useHeader } from './components/header.js';
 import {
   useInsightSlider,
   usePartnersSlider,
@@ -11,6 +12,7 @@ import {
 
 useTheme();
 useBurger();
+useHeader();
 useInsightSlider();
 usePartnersSlider();
 useTestimonialsSlider();
